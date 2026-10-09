@@ -1,1 +1,65 @@
-<!-- Add your index page here -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game</title>
+</head>
+<body>
+    <h1>The Mystery of the Old man</h1>
+    <img src="restricted.jpg" width="250"height=300>
+    <p><i>In new york city, who is this old man? <br>Answer the questions to find the answer:</i></p>
+        <h2>Objectives:</h2>
+<ol>
+<li>Explore many different locations</li>
+<br>
+<li>Talk to this old man</li>
+<br>
+<li>Question who he is</li>
+</ol>
+<br>
+    <form method="get" action="game.html">
+        <label for="firstquestion"><b>Whats your Name?</b></label>
+        <br>
+        <input type="email" id="firstquestion" name="firstquestion" placeholder="YourName">
+        <br>
+        <br>
+        <label for="dropdown"><b>Which difficulty</b></label>
+        <br>
+        <select name="dropdown">
+            <option value="At school">EASY</option>
+            <option value="At home">NORMAL</option>
+            <option value="At park">HARD</option>
+        </select>
+        <br>
+        <br>
+        <label for="radiotype">I'm pro at visual novels</label>
+        <input type="radio" id="radiotype" name="radiotype">
+        <br>
+        <label for="radiotype2">I'm bad at visual novels</label>
+        <input type="radio" id="radiotype2" name="radiotype">
+        <br>
+        <label for="radiotype3">I've never played a visual novel</label>
+        <input type="radio" id="radiotype3" name="radiotype">
+
+        <br>
+        <br>
+        <label for="field"><b><i>I am confident that I can finish this game</i></b></label>
+        <br>
+        <input type="range" id="field" name="field">
+        <br>
+        <br>
+        <label for="Iontknow">Anything you're curious about?:</label>
+        <br>
+        <textarea name="Iontknow" id="Iontknow" placeholder="feedback" cols="40" rows="10"></textarea>
+        <br>
+        <input type="submit" value="Start Game">
+
+    </form>
+    <ul>
+        <li><a href="game.html">Game</a></li>
+        <br>
+        <li><a href="aboutme.html">About me</a></li>
+    </ul>
+</body>
+</html>
