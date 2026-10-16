@@ -10,12 +10,12 @@
 // --------------------------------------------------
 
 // First, we create a variable for the current scene being displayed
-let currentScene = "backyard";
+let currentScene = "city";
 
 // Then, we create an object that stores the data for each scene,
 const scenes = {
   // See "backyard" for the first example
-  backyard: {
+  city: {
     title: "Location: NYC",
     character: "Me",
     text: "The sun rises over the bustling city of New York. You are on your way to an interview for your chance to pitch a movie and begin your journey into the film industry as an up and coming director. Nail this pitch and you’ll get a free plane ticket to L.A. where the magic happens. The sun rises over the bustling streets of New York City, casting a warm glow over the cityscape. You start to ride your bicycle to work, you get distracted and suddenly hit a big object.",
@@ -27,7 +27,7 @@ const scenes = {
         action: function () {
           pickUpItem("brass knee");
         },
-        nextScene: "entrance"
+        nextScene: "apartment"
       },
       {
           text: "KEEP CYCLING",
@@ -39,7 +39,7 @@ const scenes = {
     ]
   },
 
-  entrance: {
+  apartment: {
     title: "Location: APARTMENT",
     character: "Interviewee:Old Man",
     text: "Your messy but cozy apartment, you had been living here for about 8 years getting used your new environment, Yet camp, the ramblings of your neighbors had left you quite tenacious to move out",
@@ -55,7 +55,7 @@ const scenes = {
     ]
   },
 
-  theathre: {
+  Theatre: {
     title: "The Theatre",
     text: "Where it all began, you were eight years old with your parents to see the movie JAWS by up and coming director Steven Spielberg, Even through the small shutters you could see of the movie shielded by your mother’s hands, Passion had started to lit up in your eyes as in that moment you realize that these pictures on the screen would somehow captivate you for the rest of your life.",
     choices: [
@@ -80,7 +80,7 @@ const scenes = {
       },
       {
         text: "GO TO MEDIA STORE",
-        nextScene: "backyard"
+        nextScene: "MediaStore"
       }
     ]
 
@@ -96,7 +96,7 @@ const scenes = {
       },
       {
         text:"GO TO BEACH",
-        action: unlockDoor
+        nextScene:"Beach"
       }
     ]
   },
@@ -110,7 +110,7 @@ const scenes = {
       },
       {
         text:"GO TO UNIVERSITY",
-        action: unlockDoor
+        nextScene:"University"
       }
     ]
   },
@@ -120,11 +120,11 @@ const scenes = {
     choices:[
       {
         text:"ASK IF HE WANTS TO GO IN",
-        action: unlockDoor
+        nextScene:"GOODENDING"
       },
       {
         text:"GO BACK TO STREET",
-        action: unlockDoor
+        nextScene:"city"
       }
     ]
   },

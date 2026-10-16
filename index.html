@@ -6,9 +6,15 @@
     <title>Game</title>
 </head>
 <body>
-    <h1>The Mystery of the Old man</h1>
+    <header>
+        <h1>The Mystery of the Old man</h1>
+    </header>
+    <main>
+        <section>
     <img src="restricted.jpg" width="250"height=300>
     <p><i>In new york city, who is this old man? <br>Answer the questions to find the answer:</i></p>
+    </section>
+    <section>
         <h2>Objectives:</h2>
 <ol>
 <li>Explore many different locations</li>
@@ -17,13 +23,17 @@
 <br>
 <li>Question who he is</li>
 </ol>
+</section>
 <br>
+<section>
     <form method="get" action="game.html">
+        <section>
         <label for="firstquestion"><b>Whats your Name?</b></label>
         <br>
         <input type="email" id="firstquestion" name="firstquestion" placeholder="YourName">
+        </section>
         <br>
-        <br>
+        <section>
         <label for="dropdown"><b>Which difficulty</b></label>
         <br>
         <select name="dropdown">
@@ -31,8 +41,9 @@
             <option value="At home">NORMAL</option>
             <option value="At park">HARD</option>
         </select>
+        </section>
         <br>
-        <br>
+        <section>
         <label for="radiotype">I'm pro at visual novels</label>
         <input type="radio" id="radiotype" name="radiotype">
         <br>
@@ -41,25 +52,33 @@
         <br>
         <label for="radiotype3">I've never played a visual novel</label>
         <input type="radio" id="radiotype3" name="radiotype">
-
+        </section>
         <br>
-        <br>
+        <section>
         <label for="field"><b><i>I am confident that I can finish this game</i></b></label>
         <br>
         <input type="range" id="field" name="field">
+        </section>
         <br>
-        <br>
+        <section>
         <label for="Iontknow">Anything you're curious about?:</label>
         <br>
         <textarea name="Iontknow" id="Iontknow" placeholder="feedback" cols="40" rows="10"></textarea>
+        </section>
         <br>
+        <section>
         <input type="submit" value="Start Game">
+        </section>
 
     </form>
+    </section>
+    </main>
+    <footer>
     <ul>
         <li><a href="game.html">Game</a></li>
         <br>
-        <li><a href="aboutme.html">About me</a></li>
+        <li><a href="about.html">About me</a></li>
     </ul>
+    </footer>
 </body>
 </html>
