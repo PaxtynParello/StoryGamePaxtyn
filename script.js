@@ -16,25 +16,21 @@ let currentScene = "backyard";
 const scenes = {
   // See "backyard" for the first example
   backyard: {
-    title: "Location: Backyard",
-    character: "Interviewee:Grandma",
-    text: "Text: well what I remember happening is that Darcie went inside to play with her pretend kitchen, I heard her neighbor mention he was really hungry, and the dog ran around really quickly",
+    title: "Location: NYC",
+    character: "Me",
+    text: "The sun rises over the bustling city of New York. You are on your way to an interview for your chance to pitch a movie and begin your journey into the film industry as an up and coming director. Nail this pitch and you’ll get a free plane ticket to L.A. where the magic happens. The sun rises over the bustling streets of New York City, casting a warm glow over the cityscape. You start to ride your bicycle to work, you get distracted and suddenly hit a big object.",
     // you can choose how many choices to include
     // each choice can have text, an action, and/or nextScene
     choices: [
       {
-        text: "Chase after the dog (-10 HP)",
+        text: "CHECK WHAT YOU HIT",
         action: function () {
-          updateHealth(-10);
+          pickUpItem("brass knee");
         },
         nextScene: "entrance"
       },
       {
-        text: "Ask about the neighbor",
-        nextScene: "hallway"
-      },
-      {
-          text: "Pick up the brass key",
+          text: "KEEP CYCLING",
           action: function () {
             pickUpItem("brass key");
           },
@@ -44,50 +40,98 @@ const scenes = {
   },
 
   entrance: {
-    title: "Location: Entrance",
-    character: "Interviewee:Neighbor",
-    text: "well what I remember...",
+    title: "Location: APARTMENT",
+    character: "Interviewee:Old Man",
+    text: "Your messy but cozy apartment, you had been living here for about 8 years getting used your new environment, Yet camp, the ramblings of your neighbors had left you quite tenacious to move out",
     choices: [
       {
-        text: "Ask about the dog",
+        text: "SHOW HIM AROUND",
         nextScene: "backyard"
       },
          {
-        text: "Ask about the neighbor",
-        nextScene: "hallway"
+        text: "GO TO THEATRE",
+        nextScene: "Theatre"
       }
     ]
   },
 
-  hallway: {
-    title: "The Hallway",
-    text: "The hallway is dark and silent.",
+  theathre: {
+    title: "The Theatre",
+    text: "Where it all began, you were eight years old with your parents to see the movie JAWS by up and coming director Steven Spielberg, Even through the small shutters you could see of the movie shielded by your mother’s hands, Passion had started to lit up in your eyes as in that moment you realize that these pictures on the screen would somehow captivate you for the rest of your life.",
     choices: [
       {
-        text: "backyard",
+        text: "ASK WHAT MOVIE HE WANTS TO SEE",
         nextScene: "lockedDoor"
+      },
+      {
+        text:"GO TO PARK",
+        nextScene: "Park"
       }
     ]
   },
 
-   lockedDoor: {
-    title: "The Locked Door",
-    text: "The door handle doesn't move.",
+   Park: {
+    title: "PARK",
+    text: "Central Park, one of the most known tourist attractions of New York. The lakes where couples lay in the boats, Where artists draw their scope, But for me, it’s where I usually eat.",
     choices: [
       {
-        text: "Try to open it",
+        text: "ASK WHAT MOVIE HE WANTS TO SEE",
         action: unlockDoor
       },
       {
-        text: "Go back",
+        text: "GO TO MEDIA STORE",
         nextScene: "backyard"
       }
     ]
+
   },
 
-   solution: {
-    title: "The solution",
-    text: "You solved the mystery!",
+  MediaStore: {
+    title:"THE STORE",
+    text:"Many would list a grocery store as one of the most frequent stores they go to, But for me, my survival is dependent on my mind rather than my stomach. From the many books to albums to movies, this place has it all The different minds all encased in tiny little boxes to be paid to be seen, I would buy everything in this store if I could.",
+    choices:[
+      {
+        text:"ASK IF HE WANTS ANYTHING",
+        action: unlockDoor
+      },
+      {
+        text:"GO TO BEACH",
+        action: unlockDoor
+      }
+    ]
+  },
+  Beach: {
+    title:"THE BEACH",
+    text:"From the girls in bikinis to men in their trunks, this place would be where you’d spend your Sundays instead of being stuck in some old church. From the touch of cold sea water onto the heated surface of your suntanned skin. The hot sand touches your bosom as your tongue devours the cold popsicle. I mean, how else would you want to spend your weekend?",
+    choices:[
+      {
+        text:"ASK WHAT HE WANTS TO DO",
+        action: unlockDoor
+      },
+      {
+        text:"GO TO UNIVERSITY",
+        action: unlockDoor
+      }
+    ]
+  },
+    University: {
+    title:"THE UNIVERSITY",
+    text:"Shaped like a castle for the knowledgeable, The dormitories with sleep deprived students, The classes of absent professors Universities are made to create philosophers, the best in their craft. But how can you really be a philosopher if all your knowledge is of someone else's. All I’m saying is that you’ll know more of life when you experience it than hearing someone else’s.",
+    choices:[
+      {
+        text:"ASK IF HE WANTS TO GO IN",
+        action: unlockDoor
+      },
+      {
+        text:"GO BACK TO STREET",
+        action: unlockDoor
+      }
+    ]
+  },
+  
+   GOODENDING: {
+    title: "GOOD ENDING",
+    text: "You and Yaroslav look beyond the vast look of New York, You see the as the bustling city creates a diverse set of stories following each person they come across, The stories beyond them are endless, Just like the endless connections to be made.",
     
   }
 };
