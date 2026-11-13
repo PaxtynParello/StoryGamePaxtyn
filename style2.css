@@ -50,6 +50,23 @@
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     font-size: 19px;
 }
+.scene3-text{
+    background-image: url('newspaper2.jpg');
+    background-size: cover;
+    background-position: center;
+    text-align:center;
+    border: 3px solid rgb(4, 4, 4);
+    border-radius: 10px;
+    padding: 10px;
+    color:rgb(8, 8, 8);
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-size: 22px;
+    height: 350px;
+    align-items: center;
+    display: flex;
+    width:50;
+}
 .scene2-text{
     background-image: url('newspaper.jpg');
     background-size: cover;
@@ -73,7 +90,7 @@
     place-items:center;
      margin-bottom: 2px;
 }
-/* Space between buttons */
+
 #choices-container {
     display: flex;
     flex-direction: row;
@@ -82,7 +99,7 @@
     margin-top: 2px;
 }
 
-/* Make buttons bigger */
+
 #choices-container button {
     width: 250px;
     min-height: 50px;
