@@ -47,6 +47,7 @@
     color:rgb(8, 8, 8);
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-size: 19px;
 }
 .scene2-text{
     background-image: url('newspaper.jpg');
@@ -74,8 +75,7 @@
 /* Space between buttons */
 #choices-container {
     display: flex;
-    flex-direction: row
-    ;
+    flex-direction: row;
     gap: 25px;
     align-items: center;
     margin-top: 2px;
