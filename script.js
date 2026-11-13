@@ -18,23 +18,34 @@ const scenes = {
   city: {
     title: "Location: NYC",
     character: "Me",
-    text: "The sun rises over the bustling city of New York. You are on your way to an interview for your chance to pitch a movie and begin your journey into the film industry as an up and coming director. Nail this pitch and you’ll get a free plane ticket to L.A. where the magic happens. The sun rises over the bustling streets of New York City, casting a warm glow over the cityscape. You start to ride your bicycle to work, you get distracted and suddenly hit a big object.",
+    text: "The sun rises over the bustling city of New York. You are on your way to an interview for your chance to pitch a movie and begin your journey into the film industry as an up and coming director. Nail this pitch and you’ll get a free plane ticket to L.A. where the magic happens. The sun rises over the bustling streets of New York City, casting a warm glow over the cityscape. You start to ride your bicycle to work, you get distracted and suddenly hit a big object. It appears to be an old man who was shivelered up on the floor, as you apologize he promises not to press charges if you were to show him around town.",
     // you can choose how many choices to include
     // each choice can have text, an action, and/or nextScene
     choices: [
       {
-        text: "CHECK WHAT YOU HIT",
-        action: function () {
-          pickUpItem("brass knee");
-        },
+        text: "ACCEPT HIS OFFER",
         nextScene: "apartment"
       },
       {
           text: "KEEP CYCLING",
           action: function () {
-            pickUpItem("brass key");
-          },
-          nextScene: "hallway"
+          updateHealth(-50);
+        },
+          nextScene: "jail"
+      }
+    ]
+  },
+    jail: {
+    title: "Location: NYC JAIL",
+    character: "Me",
+    text: "Well, you are now in a cell and being fined 1,000$, and you must pay it before you can leave and now your ankles are broken because you got into a fight with an officer.",
+    choices: [
+      {
+        text: "RESTART",
+        action: function () {
+          updateHealth(50);
+        },
+        nextScene: "city"
       }
     ]
   },
@@ -46,8 +57,22 @@ const scenes = {
     choices: [
       {
         text: "SHOW HIM AROUND",
-        nextScene: "backyard"
+        action: function () {
+          pickUpItem("photo");
+        },
+        nextScene: "apartmentsceneoldman"
       },
+         {
+        text: "GO TO THEATRE",
+        nextScene: "Theatre"
+      }
+    ]
+  },
+  apartmentsceneoldman: {
+    title: "Location: APARTMENT",
+    character: "Interviewee:Old Man",
+    text: "You show the old man around your apartment, and he seems impressed by the cozy yet messy space. He hands you a photo of himself as a young man, smiling and full of life, you feel like you've grown closer to him.",
+    choices: [
          {
         text: "GO TO THEATRE",
         nextScene: "Theatre"
@@ -56,13 +81,26 @@ const scenes = {
   },
 
   Theatre: {
-    title: "The Theatre",
+    title: "THE THEATRE",
     text: "Where it all began, you were eight years old with your parents to see the movie JAWS by up and coming director Steven Spielberg, Even through the small shutters you could see of the movie shielded by your mother’s hands, Passion had started to lit up in your eyes as in that moment you realize that these pictures on the screen would somehow captivate you for the rest of your life.",
     choices: [
       {
         text: "ASK WHAT MOVIE HE WANTS TO SEE",
-        nextScene: "lockedDoor"
+        action: function () {
+          pickUpItem("photo 2");
+        },
+        nextScene: "Theatreoldmanscene"
       },
+      {
+        text:"GO TO PARK",
+        nextScene: "Park"
+      }
+    ]
+  },
+  Theatreoldmanscene: {
+    title: "THE THEATRE",
+    text: "The old man suggests for you two to watch On the Waterfront, as there is a rescreening for it. You both head into the theatre and take your seats, you both enjoy the movie very much. After the movie, the old man hands you another photo; a picture of him and his wife newly wed, you feel like you've grown closer to him.",
+    choices: [
       {
         text:"GO TO PARK",
         nextScene: "Park"
@@ -75,9 +113,23 @@ const scenes = {
     text: "Central Park, one of the most known tourist attractions of New York. The lakes where couples lay in the boats, Where artists draw their scope, But for me, it’s where I usually eat.",
     choices: [
       {
-        text: "ASK WHAT MOVIE HE WANTS TO SEE",
-        action: unlockDoor
+        text: "ASK WHAT HE'D LIKE TO DO",
+        action: function () {
+          pickUpItem("photo 3");
+        },
+        nextScene: "Parkoldman"
       },
+      {
+        text: "GO TO MEDIA STORE",
+        nextScene: "MediaStore"
+      }
+    ]
+
+  },
+   Parkoldman: {
+    title: "PARK",
+    text: "The old man suggests for you two to take a leisurely walk around the park, enjoying the scenery and each other's company. You both stroll along the paths, passing by the lakes and artists, and the old man hands you another photo; a picture of him and his wife on a picnic in the park, you feel like you've grown closer to him.",
+    choices: [
       {
         text: "GO TO MEDIA STORE",
         nextScene: "MediaStore"
@@ -92,22 +144,21 @@ const scenes = {
     choices:[
       {
         text:"ASK IF HE WANTS ANYTHING",
-        action: unlockDoor
+        action: function () {
+          pickUpItem("DVD");
+        },
+        nextScene: "MediaStoreoldman"
       },
       {
-        text:"GO TO BEACH",
-        nextScene:"Beach"
+        text:"GO TO UNIVERSITY",
+        nextScene:"University"
       }
     ]
   },
-  Beach: {
-    title:"THE BEACH",
-    text:"From the girls in bikinis to men in their trunks, this place would be where you’d spend your Sundays instead of being stuck in some old church. From the touch of cold sea water onto the heated surface of your suntanned skin. The hot sand touches your bosom as your tongue devours the cold popsicle. I mean, how else would you want to spend your weekend?",
+    MediaStoreoldman: {
+    title:"THE STORE",
+    text:"The old man picks up a dvd copy of the movie A Streetcar Named Desire. He hands you the dvd, commenting on how handsome the male lead is, you feel like you've grown closer to him.",
     choices:[
-      {
-        text:"ASK WHAT HE WANTS TO DO",
-        action: unlockDoor
-      },
       {
         text:"GO TO UNIVERSITY",
         nextScene:"University"
@@ -120,19 +171,44 @@ const scenes = {
     choices:[
       {
         text:"ASK IF HE WANTS TO GO IN",
-        nextScene:"GOODENDING"
+        nextScene:"Universityoldman"
       },
       {
         text:"GO BACK TO STREET",
-        nextScene:"city"
+        nextScene:"BadEnding"
+      }
+    ]
+  },
+   Universityoldman: {
+    title:"THE UNIVERSITY",
+    text:"The old man looks around the university, taking in the grand architecture and the bustling students. He seems impressed by the vibrant atmosphere and the sense of knowledge that permeates the air. He hands you another photo but not of any university or high school but of him on what seems to be a set, and then you start to realize something.",
+    choices:[
+      {
+        text:"QUESTION HIM",
+        nextScene:"GoodEnding"
       }
     ]
   },
   
-   GOODENDING: {
+   GoodEnding: {
     title: "GOOD ENDING",
-    text: "You and Yaroslav look beyond the vast look of New York, You see the as the bustling city creates a diverse set of stories following each person they come across, The stories beyond them are endless, Just like the endless connections to be made.",
-    
+    text: "You then question the old man, 'Are you Marlon Brando?' He laughs and nods, confirming your suspicion. A moment of realization washes over you as you understand the connection between the photos and the man before you. You feel a sense of awe and curiosity about the life and experiences of this legendary actor. The encounter leaves you with a deeper appreciation for the stories behind the faces you meet and the lives they have lived. He then offers you a job as an intern for a film company which you then happily accept!",
+    choices:[
+      {
+        text:"START OVER",
+        nextScene:"city"
+      }
+    ]
+  },
+  BadEnding: {
+    title: "BAD ENDING",
+    text: "You decide to go back to the street, missing the opportunity to interact with the old man and learn more about his life. The encounter leaves you with a sense of regret and curiosity about what might have been. You realize that sometimes, taking a chance to connect with others can lead to unexpected and rewarding experiences.",
+    choices:[
+      {
+        text:"START OVER",
+        nextScene:"city"
+      }
+    ]
   }
 };
 

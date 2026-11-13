@@ -1,0 +1,16 @@
+.op{
+    background-color:rgb(101, 103, 206);
+    font-family:'Times New Roman', Times, serif;
+    color:rgb(12, 12, 183);
+    text-align:center;
+    border: 6px solid rgb(188, 15, 41);
+    padding: 10px;
+}
+
+.second{
+    background-color:rgb(188, 15, 41);
+    font-family:'Times New Roman', Times, serif;
+    color:rgb(12, 12, 183);
+    border: 6px solid rgb(101, 103, 206);
+    padding: 10px;
+}

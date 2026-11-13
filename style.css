@@ -57,5 +57,51 @@
     background-color: red;
 }
 .teeth{
-    border:white
+    border:white solid 30px;
+    height: 1px;
+    width: 1px;
+    margin-top:-57%;
+    margin-left:25%;
+    background-color: white;
+}
+.teeth2{
+    border:white solid 30px;
+    height: 1px;
+    width: 1px;
+    margin-top:-13.4%;
+    margin-left:38%;
+    background-color: white;
+}
+.teeth3{
+    border:white solid 30px;
+    height: 1px;
+    width: 1px;
+    margin-top:-13.4%;
+    margin-left:52%;
+    background-color: white;
+}
+.teeth4{
+    border:white solid 30px;
+    height: 1px;
+    width: 1px;
+    margin-top:-13.4%;
+    margin-left:66%;
+    background-color: white;
+}
+.teeth5{
+    border:white solid 30px;
+    height: 1px;
+    width: 1px;
+    margin-top:-13.6%;
+    margin-left:12%;
+    background-color: white;
+}
+.lastpart{
+    border:rgb(0, 0, 0) solid 10px;
+    height: 90px;
+    width: 1px;
+    margin-top:20.4%;
+    margin-left:39%;
+    background-color: rgb(0, 0, 0);
+
 }
