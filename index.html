@@ -50,6 +50,21 @@
         <h2>Objectives:</h2>
 <ol>
 <li>Explore many different locations</li>
+<div class="container">
+  <div class="row g-4 justify-content-center">
+    <div class="col-6">
+      <div class="border p-4 text-center h-100">
+        <img src="apartment.jpg" width="250" height="300" class="img-fluid" alt="Restricted Image">
+      </div>
+    </div>
+    <div class="col-6">
+      <div class="border p-4 text-center h-100">
+        <img src="centralpark2.jpg" width="250" height="300" class="img-fluid" alt="Restricted Image">
+      </div>
+    </div>
+
+  </div>
+</div>
 <br>
 <li>Talk to this old man</li>
 <br>
@@ -62,9 +77,10 @@
     <div class="scene2-text">
     <form method="get" action="game.html">
         <section>
-        <label for="firstquestion"><b>Whats your Name?</b></label>
-        <br>
-        <input type="email" id="firstquestion" name="firstquestion" placeholder="YourName">
+        <div class="mb-3">
+  <label for="exampleFormControlInput1" class="form-label">Email address</label>
+  <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+</div>
         </section>
         <br>
         <section>
@@ -95,15 +111,16 @@
         </section>
         <br>
         <section>
-        <label for="Iontknow">Anything you're curious about?:</label>
-        <br>
-        <textarea name="Iontknow" id="Iontknow" placeholder="feedback" cols="40" rows="10"></textarea>
+<div class="mb-3">
+  <label for="exampleFormControlTextarea1" class="form-label">Any Thoughts?</label>
+  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+</div>
         </section>
         <br>
         <section>
-            <button class="button">
-        <input type="submit" value="Start Game">
-            </button>
+        <div class="col-auto">
+    <button type="submit" class="btn btn-primary mb-3" style="background-color: #4a4d44; border-color: #3c3a35;">Start Game</button>
+  </div>
         </section>
 
     </form>
