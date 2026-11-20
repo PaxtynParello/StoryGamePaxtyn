@@ -135,3 +135,21 @@
     background-color:rgb(231, 232, 221);
     border: 3px solid rgb(50, 61, 3);
 }
+.custom-navbar {
+  background-image: url(newspaper2.jpg);
+  background-size: cover;       
+  background-position: center;  
+  background-repeat: no-repeat; 
+}
+.custom-navbar1 {
+  background-image: url(nycpic2.jpg);
+  background-size: cover;       
+  background-position: center;  
+  background-repeat: no-repeat; 
+}
+.custom-navbar2 {
+  background-image: url(pinkpan.jpg);
+  background-size: cover;       
+  background-position: center;  
+  background-repeat: no-repeat; 
+}
